@@ -285,8 +285,12 @@ in {
           template = {
             metadata.labels.app = "gitea-runner";
             spec =
+              let
+                nodeSelector = runnerCfg.nodeSelector;
+              in
               {
                 serviceAccountName = "gitea-runner";
+                nodeSelector = runnerCfg.nodeSelector;
                 containers = [
                   # act_runner — connects to Gitea, executes workflows
                   {

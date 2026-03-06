@@ -102,6 +102,11 @@ in {
         default = {};
         description = "Kubernetes affinity rules for the Gitea deployment";
       };
+      nodeSelector = lib.mkOption {
+        type = lib.types.attrsOf lib.types.str;
+        default = {};
+        description = "Node selector to pin Gitea pods to specific nodes";
+      };
       storageSize = lib.mkOption {
         type = lib.types.str;
         default = "50Gi";
@@ -120,6 +125,11 @@ in {
         type = lib.types.attrs;
         default = {};
         description = "Kubernetes affinity rules for the runner deployment";
+      };
+      nodeSelector = lib.mkOption {
+        type = lib.types.attrsOf lib.types.str;
+        default = {};
+        description = "Node selector to pin runner pods to specific nodes";
       };
       storageSize = lib.mkOption {
         type = lib.types.str;

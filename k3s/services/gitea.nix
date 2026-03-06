@@ -99,6 +99,7 @@ in {
           }
         ];
         affinity = giteaCfg.affinity;
+        nodeSelector = giteaCfg.nodeSelector;
         initContainers = [
           {
             name = "wait-for-postgres";
