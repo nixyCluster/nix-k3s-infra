@@ -53,6 +53,8 @@ in {
           };
           postgresql.parameters = cnpgCfg.postgresqlParameters;
           superuserSecret.name = "postgresql-cluster-superuser";
+        } // lib.optionalAttrs cnpgCfg.enableSuperuserAccess {
+          enableSuperuserAccess = true;
         };
       }
 

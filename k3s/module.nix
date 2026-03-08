@@ -140,6 +140,11 @@ in {
 
     services.cloudnativepg = {
       enable = lib.mkEnableOption "CloudNativePG";
+      enableSuperuserAccess = lib.mkOption {
+        type = lib.types.bool;
+        default = false;
+        description = "Enable superuser access to the cluster";
+      };
       storageSize = lib.mkOption {
         type = lib.types.str;
         default = "10Gi";
