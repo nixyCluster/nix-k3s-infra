@@ -39,7 +39,7 @@
     };
     firewallTCPPorts = mkOption {
       type = types.listOf types.port;
-      default = [22 80 443];
+      default = [22 80 443 2222];
       description = "Allowed TCP ports in the firewall";
     };
     firewallUDPPorts = mkOption {
